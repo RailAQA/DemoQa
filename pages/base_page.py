@@ -8,7 +8,7 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
-    def open(self, url):
+    def open(self, url: str):
         self.driver.get(url)
         try:
             self.element_is_clickable(15, footer_locators.LOGO_FOOTER)
@@ -17,6 +17,9 @@ class BasePage:
 
     def element_is_clickable(self, timeout: int, args):
         wait(self.driver, timeout).until(EC.element_to_be_clickable(args))
+
+    def element_is_visible(self, timeout: int, args):
+        wait(self.driver, timeout).until(EC.visibility_of_element_located(args))
     
     def scroll_to(self, element):
             self.driver.execute_script("return arguments[0].scrollIntoView({behavior: 'auto', block: 'center', inline: 'center'});", element)
@@ -24,6 +27,12 @@ class BasePage:
     def find(self, args):
          try:
             return self.driver.find_element(*args)
+         except NoSuchElementException:
+            raise AssertionError(f"Элемент с локатором {args} не существует в DOM")
+         
+    def finds(self, args):
+         try:
+            return self.driver.find_elements(*args)
          except NoSuchElementException:
             raise AssertionError(f"Элемент с локатором {args} не существует в DOM")
          
