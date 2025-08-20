@@ -10,6 +10,7 @@ class Person:
     address: str = None
     gender: int = None
     hobbies: int = None
+    default_address: str = None
 
 @dataclass
 class Date:

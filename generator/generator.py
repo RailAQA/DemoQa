@@ -15,7 +15,8 @@ def generated_person():
                  subjects=faker_en.text(), 
                  address=faker_en.street_address(),
                  gender=random.randrange(2),
-                 hobbies=random.randrange(2)
+                 hobbies=random.randrange(2),
+                 default_address=faker_ru.street_name()
                  )
 
 def generated_date():

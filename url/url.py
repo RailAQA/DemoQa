@@ -7,3 +7,5 @@ class URL:
     Widgets_Page = "https://demoqa.com/widgets"
     Interactions_Page = "https://demoqa.com/interaction"
     Book_Page = "https://demoqa.com/books"
+
+    Text_Box = "https://demoqa.com/text-box"
