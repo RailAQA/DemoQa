@@ -30,6 +30,16 @@ class BasePage:
          except NoSuchElementException:
             raise AssertionError(f"Элемент с локатором {args} не существует в DOM")
          
+    def element_is_present(self, args, timeout=5):
+        """Ожидает, пока элемент появится в DOM, и возвращает его."""
+        
+        try:
+            return wait(self.driver, timeout).until(EC.presence_of_element_located(args))
+        except TimeoutError:
+            raise AssertionError(f"ERROR [Base_Page] - Элемент {args} не появился в DOM. Метод 'element_is_present'.")
+        except TimeoutException:
+            raise AssertionError(f"ERROR [Base_Page] - Элемент {args} не появился в DOM. Метод 'element_is_present'.")
+         
     def finds(self, args):
          try:
             return self.driver.find_elements(*args)
@@ -38,6 +48,17 @@ class BasePage:
          
     def assert_element_is_visible(self, args):
         return self.find(args).is_displayed()
+    
+    def assert_element_is_not_visible(self, args):
+        return not self.find(args).is_displayed()
+    
+    def assert_element_not_in_dom(self, args):
+        try:
+            self.element_is_present(args, 4)
+            return False
+        except AssertionError:
+            return True
+        
     
     def opened_url_is(self, url):
         return self.driver.current_url == url

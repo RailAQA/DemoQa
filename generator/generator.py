@@ -1,6 +1,6 @@
 import random
 
-from data.data import Person, Date
+from data.data import Person, Date, Form
 from faker import Faker
 
 faker_en = Faker('En')
@@ -27,3 +27,9 @@ def generated_date():
 def generated_subjects():
     subjects = ["Maths", "Chemisty", "Computer Science", "Commerce", "Economics"]
     return random.choice(subjects)
+
+def generated_form():
+    yield Form(full_name=faker_ru.first_name(), 
+               email=faker_ru.ascii_free_email(), 
+               address=faker_en.street_address(), 
+               default_address=faker_ru.street_name())

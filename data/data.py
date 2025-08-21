@@ -18,3 +18,10 @@ class Date:
     month: str = None
     year: str = None
     time: str = None
+
+@dataclass
+class Form:
+    full_name: str = None
+    email: str = None
+    address: str = None
+    default_address: str = None
