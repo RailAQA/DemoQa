@@ -1,7 +1,8 @@
 import random
-
+from locators.check_box_locators import CheckBoxLocators
 from data.data import Person, Date, Form
 from faker import Faker
+locators = CheckBoxLocators()
 
 faker_en = Faker('En')
 faker_ru = Faker('Ru')
@@ -33,3 +34,7 @@ def generated_form():
                email=faker_ru.ascii_free_email(), 
                address=faker_en.street_address(), 
                default_address=faker_ru.street_name())
+    
+def generated_check_box():
+    check_box = [locators.DESKTOP_CHECKBOX, locators.DOCUMENTS_CHECKBOX, locators.DOWNLOADS_CHECKBOX]
+    return random.choice(check_box)

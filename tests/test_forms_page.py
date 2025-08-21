@@ -1,7 +1,6 @@
 from url.url import URL
 import pytest
 url = URL()
-from time import sleep
 
 
 @pytest.mark.forms_page

@@ -3,6 +3,7 @@ import pytest
 from pages.main_page import MainPage
 from pages.forms_page import FormsPage
 from pages.text_box_page import TextBoxPage
+from pages.check_box_page import CheckBoxPage
 
 
 
@@ -25,3 +26,7 @@ def forms_page(driver):
 @pytest.fixture
 def text_box_page(driver):
     return TextBoxPage(driver)
+
+@pytest.fixture
+def check_box_page(driver):
+    return CheckBoxPage(driver)

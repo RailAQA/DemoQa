@@ -9,3 +9,4 @@ class URL:
     Book_Page = "https://demoqa.com/books"
 
     Text_Box = "https://demoqa.com/text-box"
+    Check_Box_Page = "https://demoqa.com/checkbox"
