@@ -1,8 +1,10 @@
 import random
 from locators.check_box_locators import CheckBoxLocators
+from locators.buttons_locators import ButtonsLocators
 from data.data import Person, Date, Form
 from faker import Faker
 locators = CheckBoxLocators()
+button_locators = ButtonsLocators()
 
 faker_en = Faker('En')
 faker_ru = Faker('Ru')
@@ -38,3 +40,9 @@ def generated_form():
 def generated_check_box():
     check_box = [locators.DESKTOP_CHECKBOX, locators.DOCUMENTS_CHECKBOX, locators.DOWNLOADS_CHECKBOX]
     return random.choice(check_box)
+
+def generated_radio_button():
+    return random.randrange(0, 2)
+
+def generated_button():
+    return random.randrange(2)

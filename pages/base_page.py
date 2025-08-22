@@ -62,4 +62,7 @@ class BasePage:
     
     def opened_url_is(self, url):
         return self.driver.current_url == url
+    
+    def script_click(self, element):
+        self.driver.execute_script("arguments[0].click();", element)
 
