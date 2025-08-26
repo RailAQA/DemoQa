@@ -2,7 +2,7 @@ import pytest
 from url.url import URL
 url = URL()
 
-@pytest.mark.smoke
+@pytest.mark.links_page
 def test_click_following_link(links_page):
     links_page.open(url.Links_Page)
     links_page.scroll_to_following_links()

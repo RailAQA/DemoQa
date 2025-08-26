@@ -11,6 +11,6 @@ class LinksPageLocators:
     BAD_REQUEST_LINK = (By.ID, 'bad-request')
     UNAUTH_LINK = (By.ID, 'unauthorized')
     FORBIDDEN_LINK = (By.ID, 'forbidden')
-    NOT_FOUND_LINK = (By.ID, 'Not Found')
+    NOT_FOUND_LINK = (By.ID, 'invalid-url')
 
     DATA_RESULT = (By.XPATH, '//p[@id="linkResponse"]//b')

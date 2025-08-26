@@ -13,3 +13,4 @@ class URL:
     Radio_Button_Page = "https://demoqa.com/radio-button"
     Buttons_Page = 'https://demoqa.com/buttons'
     Links_Page = "https://demoqa.com/links"
+    Broken_Links_Page = "https://demoqa.com/broken"

@@ -59,10 +59,21 @@ class BasePage:
         except AssertionError:
             return True
         
+    def assert_element_not_visible_with_wait(self, args):
+        try:
+            self.element_is_visible(5, args)
+            return False
+        except TimeoutError:
+            return True
+        except TimeoutException:
+            return True
     
     def opened_url_is(self, url):
-        return self.driver.current_url == url
+        return url in self.driver.current_url
     
+    def opened_url_is_not(self, url):
+        return self.driver.current_url != url
+
     def script_click(self, element):
         self.driver.execute_script("arguments[0].click();", element)
 
