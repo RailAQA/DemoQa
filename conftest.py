@@ -6,6 +6,7 @@ from pages.text_box_page import TextBoxPage
 from pages.check_box_page import CheckBoxPage
 from pages.radio_button_page import RadioButtonPage
 from pages.buttons_page import ButtonsPage
+from pages.links_page import LinksPage
 
 
 @pytest.fixture(scope='function')
@@ -39,3 +40,7 @@ def radio_button_page(driver):
 @pytest.fixture
 def buttons_page(driver):
     return ButtonsPage(driver)
+
+@pytest.fixture
+def links_page(driver):
+    return LinksPage(driver)

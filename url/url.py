@@ -12,3 +12,4 @@ class URL:
     Check_Box_Page = "https://demoqa.com/checkbox"
     Radio_Button_Page = "https://demoqa.com/radio-button"
     Buttons_Page = 'https://demoqa.com/buttons'
+    Links_Page = "https://demoqa.com/links"

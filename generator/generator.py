@@ -1,10 +1,12 @@
 import random
 from locators.check_box_locators import CheckBoxLocators
 from locators.buttons_locators import ButtonsLocators
+from locators.links_locators import LinksPageLocators
 from data.data import Person, Date, Form
 from faker import Faker
 locators = CheckBoxLocators()
 button_locators = ButtonsLocators()
+link_locators = LinksPageLocators()
 
 faker_en = Faker('En')
 faker_ru = Faker('Ru')
@@ -46,3 +48,11 @@ def generated_radio_button():
 
 def generated_button():
     return random.randrange(2)
+
+def generated_links():
+    choice = [link_locators.BAD_REQUEST_LINK, link_locators.CREATED_LINK, link_locators.FORBIDDEN_LINK, link_locators.MOVED_LINK, link_locators.NO_CREATED_LINK, link_locators.NOT_FOUND_LINK, link_locators.UNAUTH_LINK]
+    return random.choice(choice)
+
+def generated_links_result():
+    choice = [link_locators.DATA_RESULT[0], link_locators.DATA_RESULT[1]]
+    return random.choice(choice)
