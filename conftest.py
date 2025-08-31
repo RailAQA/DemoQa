@@ -1,13 +1,17 @@
 from selenium import webdriver
 import pytest
+import os
+from generator.generator import generated_file
 from pages.main_page import MainPage
+from pages.links_page import LinksPage
 from pages.forms_page import FormsPage
+from pages.buttons_page import ButtonsPage
 from pages.text_box_page import TextBoxPage
 from pages.check_box_page import CheckBoxPage
-from pages.radio_button_page import RadioButtonPage
-from pages.buttons_page import ButtonsPage
-from pages.links_page import LinksPage
 from pages.broken_links_page import BrokenLinksPage
+from pages.radio_button_page import RadioButtonPage
+from pages.upload_page import UploadPage
+random_file = generated_file()
 
 
 @pytest.fixture(scope='function')
@@ -49,3 +53,7 @@ def links_page(driver):
 @pytest.fixture
 def broken_links_page(driver):
     return BrokenLinksPage(driver)
+
+@pytest.fixture
+def upload_page(driver):
+    return UploadPage(driver)

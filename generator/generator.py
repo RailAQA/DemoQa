@@ -1,8 +1,9 @@
 import random
+import os
 from locators.check_box_locators import CheckBoxLocators
 from locators.buttons_locators import ButtonsLocators
 from locators.links_locators import LinksPageLocators
-from data.data import Person, Date, Form
+from data.data import Person, Date, Form, RandomFile
 from faker import Faker
 locators = CheckBoxLocators()
 button_locators = ButtonsLocators()
@@ -56,3 +57,14 @@ def generated_links():
 def generated_links_result():
     choice = [link_locators.DATA_RESULT[0], link_locators.DATA_RESULT[1]]
     return random.choice(choice)
+
+def generated_file():
+    random_file = "/Users/ann/Downloads/" + faker_ru.name()
+    return random_file
+
+def generated_new_file():
+    file = faker_ru.name_male()
+    path = f"/Users/ann/Downloads/{file}.txt"
+    with open(path, 'w') as new_file:
+        new_file.write('Hello World?')
+    return path, file

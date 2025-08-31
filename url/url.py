@@ -14,3 +14,4 @@ class URL:
     Buttons_Page = 'https://demoqa.com/buttons'
     Links_Page = "https://demoqa.com/links"
     Broken_Links_Page = "https://demoqa.com/broken"
+    Upload_page = "https://demoqa.com/upload-download"

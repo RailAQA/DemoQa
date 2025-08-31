@@ -20,6 +20,12 @@ class BasePage:
 
     def element_is_visible(self, timeout: int, args):
         wait(self.driver, timeout).until(EC.visibility_of_element_located(args))
+
+    def element_is_not_visible(self, timeout: int, args: tuple):
+        try:
+            wait(self.driver, timeout).until_not(EC.visibility_of_element_located(args))
+        except TimeoutException:
+            raise AssertionError(f'Элемент с локатором {args} не стал невидимым')
     
     def scroll_to(self, element):
             self.driver.execute_script("return arguments[0].scrollIntoView({behavior: 'auto', block: 'center', inline: 'center'});", element)

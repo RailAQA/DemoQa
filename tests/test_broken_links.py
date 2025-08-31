@@ -12,7 +12,6 @@ def test_check_valid_image(broken_links_page):
 
 @pytest.mark.xfail
 @pytest.mark.broken_links_page
-#@pytest.mark.smoke
 def test_check_broken_image(broken_links_page):
     broken_links_page.open(url.Broken_Links_Page)
     broken_links_page.scroll_to_broken_image()
@@ -20,7 +19,6 @@ def test_check_broken_image(broken_links_page):
     assert broken_image_is_not_visible
 
 @pytest.mark.broken_links_page
-@pytest.mark.smoke
 def test_click_to_valid_link(broken_links_page):
     broken_links_page.open(url.Broken_Links_Page)
     broken_links_page.scroll_to_valid_link_button()

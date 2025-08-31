@@ -25,3 +25,7 @@ class Form:
     email: str = None
     address: str = None
     default_address: str = None
+
+@dataclass
+class RandomFile:
+    file: str = None
