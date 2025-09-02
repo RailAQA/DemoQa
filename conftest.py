@@ -1,23 +1,25 @@
 from selenium import webdriver
 import pytest
-import os
 from generator.generator import generated_file
 from pages.main_page import MainPage
 from pages.links_page import LinksPage
 from pages.forms_page import FormsPage
+from pages.upload_page import UploadPage
 from pages.buttons_page import ButtonsPage
 from pages.text_box_page import TextBoxPage
 from pages.check_box_page import CheckBoxPage
 from pages.broken_links_page import BrokenLinksPage
 from pages.radio_button_page import RadioButtonPage
-from pages.upload_page import UploadPage
+from pages.properties_page import PropertiesPage
 random_file = generated_file()
 
 
 @pytest.fixture(scope='function')
 def driver():
-    driver = webdriver.Chrome()
-    driver.maximize_window()
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    driver = webdriver.Chrome(options=options)
+    #driver.maximize_window()
     yield driver
     driver.quit()
 
@@ -57,3 +59,7 @@ def broken_links_page(driver):
 @pytest.fixture
 def upload_page(driver):
     return UploadPage(driver)
+
+@pytest.fixture
+def properties_page(driver):
+    return PropertiesPage(driver)

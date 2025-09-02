@@ -15,3 +15,4 @@ class URL:
     Links_Page = "https://demoqa.com/links"
     Broken_Links_Page = "https://demoqa.com/broken"
     Upload_page = "https://demoqa.com/upload-download"
+    Properties_Page = "https://demoqa.com/dynamic-properties"

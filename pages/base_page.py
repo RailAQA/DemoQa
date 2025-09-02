@@ -2,6 +2,7 @@ from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import (NoSuchElementException, StaleElementReferenceException, ElementNotInteractableException, TimeoutException)
 from locators.footer_locators import FooterLocators
+import requests
 footer_locators = FooterLocators()
 
 class BasePage:
@@ -11,9 +12,11 @@ class BasePage:
     def open(self, url: str):
         self.driver.get(url)
         try:
-            self.element_is_clickable(15, footer_locators.LOGO_FOOTER)
+            self.element_is_visible(30, footer_locators.LOGO_FOOTER)
         except TimeoutError:
             raise AssertionError(f"Страница {url} не прогрузилась")
+        except TimeoutException:
+            raise AssertionError(f'Страница не загрузилась. Ответ сервера {requests.get(url).status_code}')
 
     def element_is_clickable(self, timeout: int, args):
         wait(self.driver, timeout).until(EC.element_to_be_clickable(args))
@@ -36,7 +39,7 @@ class BasePage:
          except NoSuchElementException:
             raise AssertionError(f"Элемент с локатором {args} не существует в DOM")
          
-    def element_is_present(self, args, timeout=5):
+    def element_is_present(self, timeout: int, args: tuple):
         """Ожидает, пока элемент появится в DOM, и возвращает его."""
         
         try:
@@ -60,7 +63,7 @@ class BasePage:
     
     def assert_element_not_in_dom(self, args):
         try:
-            self.element_is_present(args, 4)
+            self.element_is_present(10, args)
             return False
         except AssertionError:
             return True
