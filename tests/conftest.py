@@ -11,15 +11,17 @@ from pages.check_box_page import CheckBoxPage
 from pages.broken_links_page import BrokenLinksPage
 from pages.radio_button_page import RadioButtonPage
 from pages.properties_page import PropertiesPage
+from pages.alerts_window.alerts_page import AlertsPage
 random_file = generated_file()
 
 
 @pytest.fixture(scope='function')
 def driver():
-    options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    driver = webdriver.Chrome(options=options)
-    #driver.maximize_window()
+    #options = webdriver.ChromeOptions()
+    #options.add_argument('--headless')
+    #options.add_argument(f'--proxy-server={"223.204.168.248:4153"}')
+    driver = webdriver.Chrome()
+    driver.maximize_window()
     yield driver
     driver.quit()
 
@@ -63,3 +65,8 @@ def upload_page(driver):
 @pytest.fixture
 def properties_page(driver):
     return PropertiesPage(driver)
+
+@pytest.fixture
+def alerts_page(driver):
+    return AlertsPage(driver)
+

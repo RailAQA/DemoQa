@@ -16,3 +16,5 @@ class URL:
     Broken_Links_Page = "https://demoqa.com/broken"
     Upload_page = "https://demoqa.com/upload-download"
     Properties_Page = "https://demoqa.com/dynamic-properties"
+
+    Alerts_Page = "https://demoqa.com/alerts"

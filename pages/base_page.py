@@ -86,3 +86,5 @@ class BasePage:
     def script_click(self, element):
         self.driver.execute_script("arguments[0].click();", element)
 
+    def alert_is_present_wait(self, timeout: int):
+        return wait(self.driver, timeout).until(EC.alert_is_present()) # Без локатора т.к алерт
