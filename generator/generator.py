@@ -68,3 +68,6 @@ def generated_new_file():
     with open(path, 'w') as new_file:
         new_file.write('Hello World?')
     return path, file
+
+def generated_alert_acept():
+    return random.randrange(0,2)

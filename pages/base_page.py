@@ -88,3 +88,6 @@ class BasePage:
 
     def alert_is_present_wait(self, timeout: int):
         return wait(self.driver, timeout).until(EC.alert_is_present()) # Без локатора т.к алерт
+    
+    def alert_is_not_present_wait(self, timeout: int):
+        return wait(self.driver, timeout).until_not(EC.alert_is_present()) # Без локатора т.к алерт
