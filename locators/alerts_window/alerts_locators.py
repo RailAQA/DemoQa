@@ -7,3 +7,4 @@ class AlertsLocators:
     CONFIRM_BUTTON = (By.ID, 'confirmButton')
     RESULT_CONFIRM_ALERT = (By.ID, 'confirmResult')
     PROMT_BUTTON = (By.ID, 'promtButton')
+    PROMT_RESULT = (By.ID, 'promptResult')
