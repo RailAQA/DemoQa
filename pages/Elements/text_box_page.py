@@ -1,6 +1,6 @@
 from pages.base_page import BasePage
 from generator.generator import generated_form
-from locators.text_box_locators import TextBoxLocators
+from locators.elements.text_box_locators import TextBoxLocators
 locators = TextBoxLocators()
 
 

@@ -1,6 +1,6 @@
 from pages.base_page import BasePage
-from locators.main_page_locators import MainPageLocators
-from locators.footer_locators import FooterLocators
+from locators.elements.main_page_locators import MainPageLocators
+from locators.elements.footer_locators import FooterLocators
 main_locators = MainPageLocators()
 footer_locators = FooterLocators()
 

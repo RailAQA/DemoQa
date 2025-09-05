@@ -1,6 +1,5 @@
 from pages.base_page import BasePage
-from locators.properties_locators import PropertiesLocators
-from time import sleep
+from locators.elements.properties_locators import PropertiesLocators
 locators = PropertiesLocators()
 
 class PropertiesPage(BasePage):

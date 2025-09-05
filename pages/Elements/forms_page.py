@@ -1,6 +1,6 @@
 from pages.base_page import BasePage
 from generator.generator import generated_person
-from locators.forms_locators import FormsLocators
+from locators.elements.forms_locators import FormsLocators
 form_locators = FormsLocators()
 
 

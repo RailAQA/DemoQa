@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from locators.links_locators import LinksPageLocators
+from locators.elements.links_locators import LinksPageLocators
 from generator.generator import generated_links, generated_links_result
 locators = LinksPageLocators()
 

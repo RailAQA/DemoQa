@@ -1,5 +1,5 @@
-from locators.broken_links_locators import BrokenLinksLocators
-from locators.footer_locators import FooterLocators
+from locators.elements.broken_links_locators import BrokenLinksLocators
+from locators.elements.footer_locators import FooterLocators
 from pages.base_page import BasePage
 locators = BrokenLinksLocators()
 locators_footer = FooterLocators()

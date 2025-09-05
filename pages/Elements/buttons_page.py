@@ -1,6 +1,6 @@
 from pages.base_page import BasePage
 from generator.generator import generated_button
-from locators.buttons_locators import ButtonsLocators
+from locators.elements.buttons_locators import ButtonsLocators
 from selenium.webdriver.common.action_chains import ActionChains
 locators = ButtonsLocators()
 

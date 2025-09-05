@@ -1,7 +1,7 @@
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import (NoSuchElementException, StaleElementReferenceException, ElementNotInteractableException, TimeoutException)
-from locators.footer_locators import FooterLocators
+from locators.elements.footer_locators import FooterLocators
 import requests
 footer_locators = FooterLocators()
 

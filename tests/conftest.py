@@ -1,16 +1,16 @@
 from selenium import webdriver
 import pytest
 from generator.generator import generated_file
-from pages.main_page import MainPage
-from pages.links_page import LinksPage
-from pages.forms_page import FormsPage
-from pages.upload_page import UploadPage
-from pages.buttons_page import ButtonsPage
-from pages.text_box_page import TextBoxPage
-from pages.check_box_page import CheckBoxPage
-from pages.broken_links_page import BrokenLinksPage
-from pages.radio_button_page import RadioButtonPage
-from pages.properties_page import PropertiesPage
+from pages.Elements.main_page import MainPage
+from pages.Elements.links_page import LinksPage
+from pages.Elements.forms_page import FormsPage
+from pages.Elements.upload_page import UploadPage
+from pages.Elements.buttons_page import ButtonsPage
+from pages.Elements.text_box_page import TextBoxPage
+from pages.Elements.check_box_page import CheckBoxPage
+from pages.Elements.broken_links_page import BrokenLinksPage
+from pages.Elements.radio_button_page import RadioButtonPage
+from pages.Elements.properties_page import PropertiesPage
 from pages.alerts_window.alerts_page import AlertsPage
 random_file = generated_file()
 

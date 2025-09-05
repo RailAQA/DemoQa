@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from locators.upload_locators import UploadPageLocators
+from locators.elements.upload_locators import UploadPageLocators
 import os
 from generator.generator import generated_new_file
 locators = UploadPageLocators()

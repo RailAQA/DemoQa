@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from locators.radio_button_locators import RadioButtonLocators
+from locators.elements.radio_button_locators import RadioButtonLocators
 from generator.generator import generated_radio_button
 locators = RadioButtonLocators()
 

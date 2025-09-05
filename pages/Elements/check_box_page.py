@@ -1,6 +1,6 @@
 from pages.base_page import BasePage
 from generator.generator import generated_check_box
-from locators.check_box_locators import CheckBoxLocators
+from locators.elements.check_box_locators import CheckBoxLocators
 locators = CheckBoxLocators()
 
 class CheckBoxPage(BasePage):
