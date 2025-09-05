@@ -22,7 +22,7 @@ class BasePage:
         wait(self.driver, timeout).until(EC.element_to_be_clickable(args))
 
     def element_is_visible(self, timeout: int, args):
-        wait(self.driver, timeout).until(EC.visibility_of_element_located(args))
+        return wait(self.driver, timeout).until(EC.visibility_of_element_located(args))
 
     def element_is_not_visible(self, timeout: int, args: tuple):
         try:

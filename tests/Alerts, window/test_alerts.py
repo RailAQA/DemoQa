@@ -33,7 +33,7 @@ def test_timer_alert_close(alerts_page):
     assert alert_is_closed
     assert resust_text_is_correct
 
-@pytest.mark.smoke
+@pytest.mark.alerts_page
 def test_timer_alert_close(alerts_page):
     alerts_page.open(url.Alerts_Page)
     alerts_page.click_to_promt_button()

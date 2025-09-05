@@ -12,6 +12,7 @@ from pages.Elements.broken_links_page import BrokenLinksPage
 from pages.Elements.radio_button_page import RadioButtonPage
 from pages.Elements.properties_page import PropertiesPage
 from pages.alerts_window.alerts_page import AlertsPage
+from pages.alerts_window.window_page import WindowPage
 random_file = generated_file()
 
 
@@ -69,4 +70,8 @@ def properties_page(driver):
 @pytest.fixture
 def alerts_page(driver):
     return AlertsPage(driver)
+
+@pytest.fixture
+def window_page(driver):
+    return WindowPage(driver)
 

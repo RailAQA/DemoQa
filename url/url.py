@@ -18,3 +18,4 @@ class URL:
     Properties_Page = "https://demoqa.com/dynamic-properties"
 
     Alerts_Page = "https://demoqa.com/alerts"
+    Window_Page = "https://demoqa.com/browser-windows"

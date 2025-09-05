@@ -1,8 +1,8 @@
 import random
 import os
-from locators.check_box_locators import CheckBoxLocators
-from locators.buttons_locators import ButtonsLocators
-from locators.links_locators import LinksPageLocators
+from locators.elements.check_box_locators import CheckBoxLocators
+from locators.elements.buttons_locators import ButtonsLocators
+from locators.elements.links_locators import LinksPageLocators
 from data.data import Person, Date, Form, RandomFile
 from faker import Faker
 locators = CheckBoxLocators()
