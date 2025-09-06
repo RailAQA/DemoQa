@@ -10,6 +10,7 @@ class WindowPage(BasePage):
         self.find(locators.TAB_BUTTON).click()
 
     def check_new_tab(self):
+        """ Проверяем, что открылась новая вкладка  """
         new_tab = self.driver.window_handles[self.current_tab + 1]
         self.driver.switch_to.window(new_tab)
         return self.element_is_visible(10, locators.NEW_TAB_TEXT).text == "This is a sample page"
